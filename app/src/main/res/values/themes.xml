@@ -13,4 +13,25 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.OpenWeather.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.OpenWeather.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OpenWeather.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextViewInColoredCard">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="SubTextViewInColoredCard">
+        <item name="android:textColor">@android:color/holo_green_light</item>
+    </style>
+
+    <style name="IconInColoredCard">
+        <item name="android:tint">@android:color/white</item>
+    </style>
 </resources>

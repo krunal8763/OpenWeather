@@ -22,4 +22,10 @@
         android:name="com.krunal.openweather.help.HelpFragment"
         android:label="@string/title_help"
         tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/navigation_city_weather"
+        android:name="com.krunal.openweather.cityweather.CityFragment"
+        android:label="@string/title_city_weather"
+        tools:layout="@layout/fragment_city_weather" />
 </navigation>

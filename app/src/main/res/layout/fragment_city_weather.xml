@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="locale"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/contentEmptyLayout"
+            layout="@layout/content_empty"
+            android:visibility="gone" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/current_label"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/todayMaterialCard"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_mlarge"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:layout_marginEnd="@dimen/spacing_mlarge"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/purple_200"
+                    app:cardCornerRadius="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:paddingTop="@dimen/spacing_medium">
+
+                        <TextView
+                            android:id="@+id/temp_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layoutDirection="ltr"
+                            android:textColor="@color/white"
+                            android:textSize="80sp"
+                            tools:text="30" />
+
+                        <TextView
+                            android:id="@+id/description_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            tools:text="rain" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_large"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/spacing_middle">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/TextViewInColoredCard"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/humidity_label"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="@dimen/spacing_medium"
+                                        android:layout_height="0dp" />
+
+                                    <TextView
+                                        android:id="@+id/humidity_text_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp"
+                                        tools:text="rain" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/spacing_middle">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/TextViewInColoredCard"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/wind_label"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="@dimen/spacing_medium"
+                                        android:layout_height="0dp" />
+
+                                    <TextView
+                                        android:id="@+id/wind_text_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp"
+                                        tools:text="rain" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/weather_image"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_mlarge"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/next_4_days_hourly"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/spacing_medium" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
